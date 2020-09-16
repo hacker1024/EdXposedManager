@@ -21,9 +21,8 @@ jobs:
       - name: Build release APK
         run: bash ./gradlew assembleRelease --stacktrace
       - name: List directory
-        run: ls -R
+        run: ls app/build/outputs/apk/release/EdXposedManager*
       - name: Upload APK
         uses: actions/upload-artifact@v1
         with:
-          name: app
-          path: app/build/outputs/apk/release/*.apk
+          path: app/build/outputs/apk/release/EdXposedManager*
